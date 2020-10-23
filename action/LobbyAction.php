@@ -8,8 +8,13 @@
 		}
 
 		protected function executeAction() {
-			
+
+            if (empty($_SESSION["key"])){
+                header("location:login.php");
+                exit;
+            }  
+			return [];
         }
+
         
-        return [];
 	}

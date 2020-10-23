@@ -7,6 +7,10 @@
 	require_once("partial/header.php");
 ?>
 
+        <title>Login</title>
+    </head>
+<body>
+
 <form action="login.php" method="post">
     <div>
         <input type="text" name="username" placeholder="username" required>
@@ -19,8 +23,17 @@
     <div>
 		<button type="submit">Connexion</button>
 	</div>
-
 </form>
+
+<div>
+    <?php
+        if ($data["loginError"] == TRUE){
+            ?>
+               <p style="color: red;">ERREUR DE CONNEXION</p> 
+            <?php
+        }
+    ?>
+</div>
 
 <?php
 	require_once("partial/footer.php");
