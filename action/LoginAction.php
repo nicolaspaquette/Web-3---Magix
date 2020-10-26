@@ -8,6 +8,7 @@
         }
         
 		protected function executeAction() {
+            $title = "Login";
             $loginError = false;
 
 			if (isset($_POST["username"]) and isset($_POST["password"])) {
@@ -29,6 +30,6 @@
                     exit;
                 }
             }
-            return compact("loginError");
+            return compact("loginError", "title");
         }
 	}

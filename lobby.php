@@ -6,20 +6,22 @@
 
 	require_once("partial/header.php");
 ?>
-    <script type="text/javascript" src="js/chat.js"></script>
-        <title>Lobby</title>
-    </head>
-<body>
+    
+<form action="" method="POST">
 
-<button>Pratique</button>
-<button>Jouer</button>
-<button onclick="deconnexion()">Quitter</button>
+    <button type="submit" name="Pratiquer">Pratique</button>
+    <button type="submit" name="Jouer">Jouer</button>
+    <button type="submit" name="Quitter">Quitter</button>
 
-    <script>
-        const deconnexion = () =>{
-            fetch("deconnexion.php");
+</form>
+
+<?php
+        if ($data["logoutError"] == TRUE){
+            ?>
+               <p style="color: red;">ERREUR DE DÉCONNEXION</p> 
+            <?php
         }
-    </script>
+?>
 
 <iframe style="width:700px;height:240px;" onload="applyStyles(this)"
         src=<?="https://magix.apps-de-cours.com/server/#/chat/".$_SESSION["key"] ?>>

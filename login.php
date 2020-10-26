@@ -7,10 +7,6 @@
 	require_once("partial/header.php");
 ?>
 
-        <title>Login</title>
-    </head>
-<body>
-
 <form action="login.php" method="post">
     <div>
         <input type="text" name="username" placeholder="username" required>
