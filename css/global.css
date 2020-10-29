@@ -1,0 +1,130 @@
+
+*{
+    font-family: MedievalSharp;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+html, body{
+    height: 100%;
+    overflow: hidden;
+}
+
+.login{
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    background-image: url("../images/tavern.jpg");
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position:center bottom;
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+     -ms-user-select: none;     
+     user-select: none;          
+}
+
+.title{
+    color: white;
+    font-size: 100px;
+    padding-bottom: 0.5em;
+    text-shadow: 10px 10px 5px black;
+}
+
+.input{
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border:2px solid black;
+    box-shadow: 10px 10px 15px black;
+    width: 200px;
+    height: 1em;
+}
+
+.button{
+    border:2px solid black;
+    width: 200px;
+}
+
+.button:hover{
+    background-color: black;
+    color: white;
+}
+
+.erreur{
+    color: red;
+    font-size: 20px;
+    padding-top: 0.5em;
+}
+
+.throwDice{
+    position: fixed;
+    bottom: 160px;
+    left: 25%;
+    width: 400px;
+    height: 400px;
+}
+
+.dice{
+    background-image: url("../images/dice20.png");
+    background-size: contain;
+    position: absolute;
+    width: 80px;
+    height: 90px;
+    background-repeat: no-repeat;
+    left: 200px;
+    bottom: 0px;
+}
+
+.diceValue{
+    padding-top: 1.5em;
+}
+
+.lobby{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url("../images/BaldursGate.jpg");
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+}
+
+.buttonLobby{
+    margin-top: 4em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 4em;
+    border:2px solid black;
+    width: 200px;
+    box-shadow: 10px 10px 15px black;
+}
+
+.buttonLobby:hover{
+    background-color: black;
+    color: white;
+}
+
+.Minsc{
+    padding-top: 1em;
+    background-image: url("../images/Minsc.png");
+    background-repeat: no-repeat;
+    color: black;
+    text-align: right;
+    font-weight: 500;
+    width: 700px;
+    height: 450px;
+}
+
+.game{
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    background-image: url("../images/fight.jpg");
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position:center bottom;
+    background-size: cover;
+}
+

@@ -7,28 +7,38 @@
 	require_once("partial/header.php");
 ?>
 
-<form action="login.php" method="post">
-    <div>
-        <input type="text" name="username" placeholder="username" required>
-    </div>
+<div class="login">
 
-    <div>
-        <input type="password" name="password" placeholder="password" required>
-    </div>
+        <p class="title">Magix</p>
 
-    <div>
-		<button type="submit">Connexion</button>
-	</div>
-</form>
+        <form action="login.php" method="post" class="form">
+            <div>
+                <input class="input" type="text" name="username" placeholder="username" required>
+            </div>
 
-<div>
-    <?php
-        if ($data["loginError"] == TRUE){
-            ?>
-               <p style="color: red;">ERREUR DE CONNEXION</p> 
+            <div>
+                <input class="input" type="password" name="password" placeholder="password" required>
+            </div>
+
+            <div>
+                <button class="button" type="submit">Connexion</button>
+            </div>
+        </form>
+
+        <div>
             <?php
-        }
-    ?>
+                if ($data["loginError"] == TRUE){
+                    ?>
+                    <p style="color: red; font-size:40px; padding:0.5em">ERREUR DE CONNEXION</p> 
+                    <?php
+                }
+            ?>
+        </div>
+
+        <div class="throwDice">
+            <div class="dice"><p class="diceValue">20</p>
+        </div>
+
 </div>
 
 <?php

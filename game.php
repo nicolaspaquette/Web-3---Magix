@@ -7,7 +7,7 @@
 	require_once("partial/header.php");
 ?>
     
-<div>jeu</div>
+<div class="game"></div>
 
 <?php
 	require_once("partial/footer.php");

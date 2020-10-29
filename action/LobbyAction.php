@@ -16,6 +16,7 @@
 
 			$title = "Lobby";
 			$logoutError = false;
+			$key = $_SESSION["key"];
 
 			if (isset($_POST["Pratiquer"])){
 				header("location:game.php");
@@ -42,6 +43,6 @@
                 }
 			}
 			
-			return compact("logoutError", "title");
+			return compact("logoutError", "title", "key");
         }
 	}

@@ -6,26 +6,38 @@
 
 	require_once("partial/header.php");
 ?>
+
+<div class="lobby">
     
-<form action="" method="POST">
+    <form action="" method="POST">
 
-    <button type="submit" name="Pratiquer">Pratique</button>
-    <button type="submit" name="Jouer">Jouer</button>
-    <button type="submit" name="Quitter">Quitter</button>
+        <button class="buttonLobby" type="submit" name="Pratiquer">Pratique</button>
+        <button class="buttonLobby" type="submit" name="Jouer">Jouer</button>
+        <button class="buttonLobby" type="submit" name="Quitter">Quitter</button>
 
-</form>
+    </form>
 
-<?php
-        if ($data["logoutError"] == TRUE){
-            ?>
-               <p style="color: red;">ERREUR DE DÉCONNEXION</p> 
-            <?php
-        }
-?>
+    <?php
+            if ($data["logoutError"] == TRUE){
+                ?>
+                <p style="color: red;">ERREUR DE DÉCONNEXION</p> 
+                <?php
+            }
+    ?>
 
-<iframe style="width:700px;height:240px;" onload="applyStyles(this)"
-        src=<?="https://magix.apps-de-cours.com/server/#/chat/".$_SESSION["key"] ?>>
-</iframe>
+    <iframe style="width:700px;height:240px; margin-bottom: 1em;" onload="applyStyles(this)"
+            src=<?="https://magix.apps-de-cours.com/server/#/chat/".$data["key"] ?>>
+    </iframe>
+
+    <div class="Minsc">
+        <p>Take heart fellow adventurers, <br>
+            for you have curried the favor of Boo, <br>
+            the only miniature giant space <br>
+            hamster in the Realm! <br> <br>
+            -Minsc</p>
+    </div>
+
+</div>
 
 <?php
 	require_once("partial/footer.php");

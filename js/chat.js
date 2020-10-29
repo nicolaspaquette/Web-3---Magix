@@ -1,8 +1,8 @@
 const applyStyles = iframe => {
 	let styles = {
-		fontColor : "#333",
-		backgroundColor : "rgba(87, 41, 5, 0.2)",
-		fontGoogleName : "Sofia",
+		fontColor : "#000000",
+		backgroundColor : "rgba(255, 255, 255, 0.5)",
+		fontGoogleName : "MedievalSharp",
 		fontSize : "20px",
 	}
 	
