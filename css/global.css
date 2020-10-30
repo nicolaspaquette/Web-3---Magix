@@ -61,8 +61,8 @@ html, body{
 .throwDice{
     position: fixed;
     bottom: 160px;
-    left: 25%;
-    width: 400px;
+    left: 28%;
+    width: 500px;
     height: 400px;
 }
 
@@ -79,6 +79,7 @@ html, body{
 
 .diceValue{
     padding-top: 1.5em;
+    font-weight: 600;
 }
 
 .lobby{

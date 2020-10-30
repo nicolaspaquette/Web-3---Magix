@@ -6,6 +6,8 @@
 
 	require_once("partial/header.php");
 ?>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/dice.js"></script>
 
 <div class="login">
 
