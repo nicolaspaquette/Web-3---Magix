@@ -24,6 +24,12 @@ class Dice {
         this.posXNow = 0;
         this.speedX = 0;
         this.letGo = true;
+
+        this.bounceLeft = 0;
+        this.bounceRight = 0;
+
+        this.warCry = new Audio("./sounds/warCry.wav");
+        this.fallingBack = new Audio("./sounds/fallingBack.wav");
     }
 
     tick(mouseX, mouseY, isFalling, movementOver) {
@@ -59,15 +65,15 @@ class Dice {
                 if (parseInt(this.node.style.left) < 0){
                     this.node.style.left = 0 + "px";
                 }
-                else if (parseInt(this.node.style.left) + 2*this.marginX > this.parent.offsetWidth){
-                    this.node.style.left = this.parent.offsetWidth - 2*this.marginX + "px";
+                else if (parseInt(this.node.style.left) + this.node.offsetWidth > this.parent.offsetWidth){
+                    this.node.style.left = this.parent.offsetWidth - this.node.offsetWidth + "px";
                 }
                
                 if (parseInt(this.node.style.top) < 0){
                     this.node.style.top = 0 + "px";
                 }
-                else if (parseInt(this.node.style.top) + 2*this.marginY > this.parent.offsetHeight){
-                    this.node.style.top = this.parent.offsetHeight - 2*this.marginY + "px";
+                else if (parseInt(this.node.style.top) + this.node.offsetHeight > this.parent.offsetHeight){
+                    this.node.style.top = this.parent.offsetHeight - this.node.offsetHeight + "px";
                 }
     
             }else{
@@ -91,8 +97,21 @@ class Dice {
                 let left = parseInt(this.node.style.left);
                 left += this.speedX;
 
-                if (left > this.parent.offsetWidth - 2*this.marginX || left < 0){
+                if (left <= 0){
                     this.speedX = -this.speedX;
+                    this.bounceLeft++;
+                    if (this.bounceLeft == 1){
+                        this.bounceRight = 0;
+                        this.speedX /= 1.5;
+                    }
+                }
+                else if (left >= this.parent.offsetWidth - this.node.offsetWidth){
+                    this.speedX = -this.speedX;
+                    this.bounceRight++;
+                    if (this.bounceRight == 1){
+                        this.bounceLeft = 0;
+                        this.speedX /= 1.5;
+                    }
                 }
 
                 this.node.style.left = left + "px";
@@ -103,9 +122,9 @@ class Dice {
                 let top = parseInt(this.node.style.top);
                 top += this.speedY;
 
-                if (top > this.parent.offsetHeight - 2*this.marginY){
+                if (top > this.parent.offsetHeight - this.node.offsetHeight){
                     this.speedY = -(this.speedY / 1.5);
-                    top = this.parent.offsetHeight - 2*this.marginY;
+                    top = this.parent.offsetHeight - this.node.offsetHeight;
                     this.bottomCounter++;
                 }
 
@@ -117,12 +136,16 @@ class Dice {
                     if (this.value == 1){
                         document.querySelector(".critical").innerHTML = "CRITICAL MISS !";
 
+                        this.fallingBack.play();
+
                         setTimeout(function(){
                             document.querySelector(".critical").innerHTML = '';
                         }, 3000);
                     }
                     else if (this.value == 20){
                         document.querySelector(".critical").innerHTML = "CRITICAL HIT !";
+
+                        this.warCry.play();
 
                         setTimeout(function(){
                             document.querySelector(".critical").innerHTML = '';
