@@ -3,6 +3,7 @@ class Dice {
     constructor() {
         this.node = document.querySelector(".dice");
         this.nodeValue = document.querySelector(".diceValue");
+        this.value;
 
         this.parent = document.querySelector(".throwDice");
 
@@ -37,8 +38,8 @@ class Dice {
             this.valueCounter++
 
             if (this.valueCounter == 10){
-                let value = Math.floor(Math.random() * 20) + 1;
-                let textValue = value.toString()
+                this.value = Math.floor(Math.random() * 20) + 1;
+                let textValue = this.value.toString()
                 this.nodeValue.innerHTML = textValue;
                 this.valueCounter = 0;
             }
@@ -113,6 +114,21 @@ class Dice {
                 // apres 10 rebonds, ne bouge plus
 
                 if (this.bottomCounter >= 10){
+                    if (this.value == 1){
+                        document.querySelector(".critical").innerHTML = "CRITICAL MISS !";
+
+                        setTimeout(function(){
+                            document.querySelector(".critical").innerHTML = '';
+                        }, 3000);
+                    }
+                    else if (this.value == 20){
+                        document.querySelector(".critical").innerHTML = "CRITICAL HIT !";
+
+                        setTimeout(function(){
+                            document.querySelector(".critical").innerHTML = '';
+                        }, 3000);
+                    }
+
                     this.bottomCounter = 0;
                     this.stopped = true;
                     this.letGo = true;

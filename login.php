@@ -37,8 +37,10 @@
             ?>
         </div>
 
+        <p class="critical"></p>
+
         <div class="throwDice">
-            <div class="dice"><p class="diceValue">20</p>
+            <div class="dice"><p class="diceValue">10</p>
         </div>
 
 </div>
