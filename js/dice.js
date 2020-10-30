@@ -50,7 +50,7 @@ class Dice {
                 this.valueCounter = 0;
             }
 
-            this.angle += 2;
+            this.angle += 3;
             this.node.style.transform = "rotate(" + this.angle + "deg)";
         }
 
