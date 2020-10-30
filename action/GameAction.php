@@ -14,8 +14,10 @@
                 exit;
             }
             
-            $title = "Game";
+			$title = "Game";
+			$key = $_SESSION["key"];
+			
             
-			return compact("title");
+			return compact("title", "key");
         }
 	}

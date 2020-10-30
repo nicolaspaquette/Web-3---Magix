@@ -45,7 +45,7 @@ class Dice {
 
             if (this.valueCounter == 10){
                 this.value = Math.floor(Math.random() * 20) + 1;
-                let textValue = this.value.toString()
+                let textValue = this.value.toString();
                 this.nodeValue.innerHTML = textValue;
                 this.valueCounter = 0;
             }

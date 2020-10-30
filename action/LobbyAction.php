@@ -16,15 +16,29 @@
 
 			$title = "Lobby";
 			$logoutError = false;
+			$gameError = false;
 			$key = $_SESSION["key"];
 
-			if (isset($_POST["Pratiquer"])){
-				header("location:game.php");
-				exit;
-			}
-			else if (isset($_POST["Jouer"])){
-				header("location:game.php");
-				exit;
+			if (isset($_POST["Pratiquer"]) || isset($_POST["Jouer"])){
+				$data = [];
+				$data["key"] = $_SESSION["key"];
+
+				if (isset($_POST["Pratiquer"])){
+					$data["type"] = "TRAINING";
+				}
+				else{
+					$data["type"] = "PVP";
+				}
+			
+				$result = parent::callAPI("games/auto-match", $data);
+
+				if ($result == "INVALID_KEY" || $result == "INVALID_GAME_TYPE" || $result == "DECK_INCOMPLETE" || $result == "MAX_DEATH_THRESHOLD_REACHED"){
+					$gameError = true;
+                }
+                else if ($result == "JOINED_PVP" || $result == "CREATED_PVP" || $result == "JOINED_TRAINING"){
+                    header("location:game.php");
+                    exit;
+                }				
 			}
 			else if (isset($_POST["Quitter"])){
 				$data = [];
@@ -43,6 +57,6 @@
                 }
 			}
 			
-			return compact("logoutError", "title", "key");
+			return compact("logoutError", "title", "key", "gameError");
         }
 	}

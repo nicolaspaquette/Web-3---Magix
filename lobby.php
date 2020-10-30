@@ -18,9 +18,14 @@
     </form>
 
     <?php
-            if ($data["logoutError"] == TRUE){
+            if ($data["logoutError"] == true){
                 ?>
                 <p style="color: red;">ERREUR DE DÉCONNEXION</p> 
+                <?php
+            }
+            else if ($data["gameError"] == true){
+                ?>
+                <p style="color: red;">ERREUR DE CONNEXION AU JEU</p> 
                 <?php
             }
     ?>

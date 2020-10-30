@@ -6,8 +6,65 @@
 
 	require_once("partial/header.php");
 ?>
+	<script type="text/javascript" src="js/game.js"></script>
     
-<div class="game"></div>
+<div class="game">
+	<div class="enemy">
+
+		<div class="enemyCardsInHand"></div>
+
+		<div class="enemyPortrait">
+			<div class="portrait"></div>
+		</div>
+
+		<div class="enemyHealth">
+			<p class="enemyHealthValue"></p>
+		</div>
+
+		<div class="enemyMana">
+			<p class="enemyManaValue"></p>
+		</div>
+
+		<div class="enemyCardsInDeck">
+			<p class="enemyCardsInDeckValue"></p>
+		</div>
+
+	</div>
+
+	<div class="board">
+
+		<iframe class="gameChat" onload="applyStyles(this)"
+				src=<?="https://magix.apps-de-cours.com/server/#/chat/".$data["key"]."/large" ?>>
+		</iframe>
+
+		<div class="battlefield"></div>
+
+	</div>
+
+	<div class="player">
+		<div class="playerHealth">
+			<p class="playerHealthValue"></p>
+		</div>
+
+		<div class="playerMana">
+			<p class="playerManaValue"></p>
+		</div>
+
+		<div class="playerCardsInDeck">
+			<p class="playerCardsInDeckValue"></p>
+		</div>
+
+		<div class="playerCardsInHand"></div>
+
+		<div class="playerButtons">
+			<button class="playerButton" type="submit" name="heroPower">Hero Power</button>
+			<button class="playerButton" type="submit" name="endTurn">End Turn</button>
+			<button class="playerButton" type="submit" name="chat" onclick="showHideChat()">Show/Hide Chat</button>
+
+		</div>
+	</div>
+
+</div>
 
 <?php
 	require_once("partial/footer.php");
