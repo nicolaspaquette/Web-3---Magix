@@ -208,7 +208,7 @@ html, body{
     top: 45%;
     text-align: center;
     color: white;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 600;
 }
 
@@ -217,7 +217,7 @@ html, body{
     top: 45%;
     text-align: center;
     color: red;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 600;
     border-radius: 20px;
 }
@@ -227,7 +227,7 @@ html, body{
     top: 45%;
     text-align: center;
     color: black;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 600;
 }
 
