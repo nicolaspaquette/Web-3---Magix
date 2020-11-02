@@ -9,6 +9,9 @@
 	<script type="text/javascript" src="js/game.js"></script>
     
 <div class="game">
+
+	<div class="welcomeText"></div>
+
 	<div class="enemy">
 
 		<div class="enemyCardsInHand"></div>
@@ -40,7 +43,8 @@
 		</div>
 
 		<div class="battlefield">
-			<div class="welcomeText"></div>
+			<div class="enemyBoard"></div>
+			<div class="playerBoard"></div>
 		</div>
 
 		<div class="battlefieldBorder"></div>
