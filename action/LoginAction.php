@@ -10,11 +10,15 @@
 		protected function executeAction() {
             $title = "Login";
             $loginError = false;
+            $username = "";
 
 			if (isset($_POST["username"]) and isset($_POST["password"])) {
                 $data = [];
                 $data["username"] = $_POST["username"];
                 $data["password"] = $_POST["password"];
+
+                $_SESSION["username"] = $_POST["username"];
+                $username = $_POST["username"];
 
                 $result = parent::callAPI("signin", $data);
                 
@@ -30,6 +34,6 @@
                     exit;
                 }
             }
-            return compact("loginError", "title");
+            return compact("loginError", "title", "username");
         }
 	}

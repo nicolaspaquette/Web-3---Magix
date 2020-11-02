@@ -15,7 +15,15 @@
 
         <form action="login.php" method="post" class="form">
             <div>
-                <input class="input" type="text" name="username" placeholder="username" required>
+                <input class="input" type="text" name="username" placeholder="username" required
+                    <?php
+                        if (!empty($data["username"]) && $data["username"] != "Invité"){
+                            ?>
+                                value=<?=$data["username"]?>
+                            <?php
+                        }
+                    ?>
+                >
             </div>
 
             <div>
