@@ -21,10 +21,14 @@ const state = () => {
         document.querySelector(".enemyClass").innerHTML = data["opponent"]["heroClass"];
 
         // message de l'ennemi pour 3 secondes
-        document.querySelector(".welcomeText").innerHTML = data["opponent"]["welcomeText"];
+        document.querySelector(".enemyWelcomeText").innerHTML = data["opponent"]["welcomeText"];
+        document.querySelector(".playerWelcomeText").innerHTML = data["welcomeText"];
         setTimeout(function(){ 
-            document.querySelector(".welcomeText").innerHTML = '';
-            document.querySelector(".welcomeText").style.display = "none";
+            document.querySelector(".enemyWelcomeText").innerHTML = '';
+            document.querySelector(".enemyWelcomeText").style.display = "none";
+
+            document.querySelector(".playerWelcomeText").innerHTML = '';
+            document.querySelector(".playerWelcomeText").style.display = "none";
         }, 3000);
 
         // cartes dans les mains du joueur
@@ -41,6 +45,14 @@ const state = () => {
             div.querySelector(".cardMechanics").innerHTML = card[i].mechanics;
             div.querySelector(".cardATK").innerHTML = card[i].atk;
             div.querySelector(".cardHP").innerHTML = card[i].hp;
+
+            for (let j = 0; j < card[i].mechanics.length; j++){
+                if (card[i].mechanics[j] == "Taunt"){
+                    let taunt = document.createElement("div");
+                    taunt.className = "cardTaunt";
+                    div.appendChild(taunt);
+                }
+            }
 
             document.querySelector(".playerCardsInHand").appendChild(div);
         }
@@ -69,6 +81,14 @@ const state = () => {
             div.querySelector(".cardATK").innerHTML = card[i].atk;
             div.querySelector(".cardHP").innerHTML = card[i].hp;
 
+            for (let j = 0; j < card[i].mechanics.length; j++){
+                if (card[i].mechanics[j] == "Taunt"){
+                    let taunt = document.createElement("div");
+                    taunt.className = "cardTaunt";
+                    div.appendChild(taunt);
+                }
+            }
+
             document.querySelector(".enemyBoard").appendChild(div);
         }
 
@@ -86,6 +106,14 @@ const state = () => {
             div.querySelector(".cardMechanics").innerHTML = card[i].mechanics;
             div.querySelector(".cardATK").innerHTML = card[i].atk;
             div.querySelector(".cardHP").innerHTML = card[i].hp;
+
+            for (let j = 0; j < card[i].mechanics.length; j++){
+                if (card[i].mechanics[j] == "Taunt"){
+                    let taunt = document.createElement("div");
+                    taunt.className = "cardTaunt";
+                    div.appendChild(taunt);
+                }
+            }
 
             document.querySelector(".playerBoard").appendChild(div);
         }

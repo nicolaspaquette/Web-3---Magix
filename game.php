@@ -10,7 +10,8 @@
     
 <div class="game">
 
-	<div class="welcomeText"></div>
+	<div class="playerWelcomeText"></div>
+	<div class="enemyWelcomeText"></div>
 
 	<div class="enemy">
 

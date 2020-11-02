@@ -31,7 +31,7 @@
     ?>
 
     <iframe style="width:700px;height:240px; margin-bottom: 1em;" onload="applyStyles(this)"
-            src=<?="https://magix.apps-de-cours.com/server/#/chat/".$data["key"] ?>>
+            src=<?="https://magix.apps-de-cours.com/server/#/chat/".$data["key"]?>>
     </iframe>
 
     <div class="Minsc">
