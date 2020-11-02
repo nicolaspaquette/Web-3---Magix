@@ -61,17 +61,15 @@
 			<p class="playerHealthValue"></p>
 		</div>
 
-		<div class="playerCardsInHand">
+		<div class="playerCardsInHand"></div>
 
-			<template class="template">
-				<div class="cardCost"></div>
-				<div class="cardImage"></div>
-				<div class="cardMechanics"></div>
-				<div class="cardATK"></div>
-				<div class="cardHP"></div>
-			</template>
-
-		</div>
+		<template id="template">
+			<div class="cardCost"></div>
+			<div class="cardImage"></div>
+			<div class="cardMechanics"></div>
+			<div class="cardATK"></div>
+			<div class="cardHP"></div>
+		</template>
 
 		<div class="playerButtons">
 			<button class="playerButton" type="submit" name="heroPower">Hero Power</button>

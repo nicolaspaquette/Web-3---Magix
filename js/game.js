@@ -24,17 +24,19 @@ const state = () => {
             document.querySelector(".welcomeText").style.display = "none";
         }, 3000);
 
-        let template = document.querySelector(".template").innerHTML;
-    
-        for (let i = 0; i < data["hand"].length; i++){
+        document.querySelector(".playerCardsInHand").innerHTML = "";
+        let templateHTML = document.querySelector("#template").innerHTML;
+        let card = data["hand"];
+
+        for (let i = 0; i < card.length; i++){
             let div = document.createElement("div");
+            div.innerHTML = templateHTML;
             div.className = "card";
 
-            div.innerHMTL = template;
-            div.querySelector(".cardCost").innerHTML = data["hand"[i]].cost;
-            div.querySelector(".cardMechanics").innerHTML = data["hand"[i]].mechanics;
-            div.querySelector(".cardATK").innerHTML = data["hand"[i]].atk;
-            div.querySelector(".cardHP").innerHTML = data["hand"[i]].hp;
+            div.querySelector(".cardCost").innerHTML = card[i].cost;
+            div.querySelector(".cardMechanics").innerHTML = card[i].mechanics;
+            div.querySelector(".cardATK").innerHTML = card[i].atk;
+            div.querySelector(".cardHP").innerHTML = card[i].hp;
 
             document.querySelector(".playerCardsInHand").appendChild(div);
         }
