@@ -39,7 +39,7 @@
             for you have curried the favor of Boo, <br>
             the only miniature giant space <br>
             hamster in the Realm! <br> <br>
-            -Minsc</p>
+        </p>
     </div>
 
 </div>

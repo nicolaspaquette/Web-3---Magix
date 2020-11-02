@@ -14,7 +14,9 @@
 		<div class="enemyCardsInHand"></div>
 
 		<div class="enemyPortrait">
+			<div class="enemyName"></div>
 			<div class="portrait"></div>
+			<div class="enemyClass"></div>
 		</div>
 
 		<div class="enemyHealth">
@@ -33,28 +35,43 @@
 
 	<div class="board">
 
-		<iframe class="gameChat" onload="applyStyles(this)"
-				src=<?="https://magix.apps-de-cours.com/server/#/chat/".$data["key"]."/large" ?>>
-		</iframe>
+		<div class="chatBox">
+			<iframe class="gameChat" onload="applyStyles(this)" src=<?="https://magix.apps-de-cours.com/server/#/chat/".$data["key"]."/large" ?>></iframe>
+		</div>
 
-		<div class="battlefield"></div>
+		<div class="battlefield">
+			<div class="welcomeText"></div>
+		</div>
+
+		<div class="battlefieldBorder"></div>
 
 	</div>
 
 	<div class="player">
-		<div class="playerHealth">
-			<p class="playerHealthValue"></p>
+
+		<div class="playerCardsInDeck">
+			<p class="playerCardsInDeckValue"></p>
 		</div>
 
 		<div class="playerMana">
 			<p class="playerManaValue"></p>
 		</div>
 
-		<div class="playerCardsInDeck">
-			<p class="playerCardsInDeckValue"></p>
+		<div class="playerHealth">
+			<p class="playerHealthValue"></p>
 		</div>
 
-		<div class="playerCardsInHand"></div>
+		<div class="playerCardsInHand">
+
+			<template class="template">
+				<div class="cardCost"></div>
+				<div class="cardImage"></div>
+				<div class="cardMechanics"></div>
+				<div class="cardATK"></div>
+				<div class="cardHP"></div>
+			</template>
+
+		</div>
 
 		<div class="playerButtons">
 			<button class="playerButton" type="submit" name="heroPower">Hero Power</button>
