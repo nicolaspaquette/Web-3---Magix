@@ -23,16 +23,18 @@
 			<div class="enemyClass"></div>
 		</div>
 
-		<div class="enemyHealth">
-			<p class="enemyHealthValue"></p>
-		</div>
+		<div class="enemyValues">
+			<div class="enemyHealth">
+				<p class="enemyHealthValue"></p>
+			</div>
 
-		<div class="enemyMana">
-			<p class="enemyManaValue"></p>
-		</div>
+			<div class="enemyMana">
+				<p class="enemyManaValue"></p>
+			</div>
 
-		<div class="enemyCardsInDeck">
-			<p class="enemyCardsInDeckValue"></p>
+			<div class="enemyCardsInDeck">
+				<p class="enemyCardsInDeckValue"></p>
+			</div>
 		</div>
 
 	</div>
