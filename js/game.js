@@ -9,6 +9,16 @@ const state = () => {
     
     if(data != "WAITING" && data != "LAST_GAME_WON" && data != "LAST_GAME_LOST"){
 
+        // temps pour le tour
+        document.querySelector(".timer").innerHTML = data["remainingTurnTime"];
+
+        if (data["yourTurn"] == true){
+            document.querySelector(".timer").style.color = "darkgreen";
+        }
+        else{
+            document.querySelector(".timer").style.color = "red";
+        }
+
         // affichage des stats des 2 joueurs
         document.querySelector(".playerHealthValue").innerHTML = data["hp"];
         document.querySelector(".playerCardsInDeckValue").innerHTML = data["remainingCardsCount"];
@@ -51,6 +61,13 @@ const state = () => {
                     let taunt = document.createElement("div");
                     taunt.className = "cardTaunt";
                     div.appendChild(taunt);
+                }
+            }
+
+            if (data["yourTurn"] == true){
+
+                if (parseInt(data["mp"]) >= parseInt(card[i].cost)){
+                    div.style.border = "2px solid darkgreen";
                 }
             }
 
@@ -117,6 +134,26 @@ const state = () => {
 
             document.querySelector(".playerBoard").appendChild(div);
         }
+
+        // boutons utilisables ou non
+        if (data["yourTurn"] == true){
+            if (parseInt(data["mp"]) >= 2){
+                document.querySelector(".heroPowerButton").style.border = "3px solid darkgreen";
+            }
+            else{
+                document.querySelector(".heroPowerButton").style.border = "3px solid black";
+            }
+        }
+        else{
+            document.querySelector(".heroPowerButton").style.border = "3px solid black";
+        }
+
+        if (data["yourTurn"] == true){
+            document.querySelector(".endTurnButton").style.border = "3px solid darkgreen";
+        }
+        else{
+            document.querySelector(".endTurnButton").style.border = "3px solid black";
+        }
     }
 
     setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
@@ -134,4 +171,35 @@ const showHideChat = () =>{
     else{
         document.querySelector(".gameChat").style.display = "block";
     }
+}
+
+let choice = "";
+
+const heroPower = () =>{
+    choice = "HERO_POWER";
+    choice = gameChoice(choice);
+}
+
+const endTurn = () =>{
+    choice = "END_TURN";
+    choice = gameChoice(choice);
+}
+
+const gameChoice = choice =>{
+
+    let formData = new FormData();
+    formData.append("choice", choice);
+
+    fetch("ajax-action.php",{
+        method: "POST",
+        credentials: "include",
+        body: formData
+    })
+    .then (response => response.json())
+    .then(data =>{
+        console.log(data);
+    })
+
+    choice = "";
+    return choice;
 }

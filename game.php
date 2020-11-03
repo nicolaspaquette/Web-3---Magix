@@ -50,7 +50,9 @@
 			<div class="playerBoard"></div>
 		</div>
 
-		<div class="battlefieldBorder"></div>
+		<div class="battlefieldBorder">
+			<p class="timer"></p>
+		</div>
 
 	</div>
 
@@ -79,9 +81,9 @@
 		</template>
 
 		<div class="playerButtons">
-			<button class="playerButton" type="submit" name="heroPower">Hero Power</button>
-			<button class="playerButton" type="submit" name="endTurn">End Turn</button>
-			<button class="playerButton" type="submit" name="chat" onclick="showHideChat()">Show/Hide Chat</button>
+			<button class="heroPowerButton" type="submit" name="heroPower" onclick="heroPower()">Hero Power</button>
+			<button class="endTurnButton" type="submit" name="endTurn" onclick="endTurn()">End Turn</button>
+			<button class="chatButton" type="submit" name="chat" onclick="showHideChat()">Show/Hide Chat</button>
 
 		</div>
 	</div>
