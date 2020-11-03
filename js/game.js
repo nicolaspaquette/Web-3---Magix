@@ -174,6 +174,10 @@ const state = () => {
 
             if (data["yourTurn"] == true){
 
+                if (card[i].state == "IDLE"){
+                    div.style.border = "2px solid yellow";
+                }
+
                 div.addEventListener("click", () =>{
                     uid = parseInt(div.querySelector(".carduid").innerHTML);
                     attackingCard = uid;
@@ -186,7 +190,7 @@ const state = () => {
 
         // boutons utilisables ou non
         if (data["yourTurn"] == true){
-            if (parseInt(data["mp"]) >= 2){
+            if (parseInt(data["mp"]) >= 2 && !data["heroPowerAlreadyUsed"]){
                 document.querySelector(".heroPowerButton").style.border = "3px solid darkgreen";
             }
             else{
