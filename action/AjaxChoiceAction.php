@@ -10,8 +10,20 @@
 		protected function executeAction() {
 			$data = [];
 			$data["key"] = $_SESSION["key"];
-			$data["type"] = $_POST["choice"];
 
+			if ($_POST["choice"] == "HERO_POWER" || $_POST["choice"] == "END_TURN"){
+				$data["type"] = $_POST["choice"];
+			}
+			else if ($_POST["choice"] == "PLAY"){
+				$data["type"] = $_POST["choice"];
+				$data["uid"] = $_POST["uid"];
+			}
+			else if ($_POST["choice"] == "ATTACK"){
+				$data["type"] = $_POST["choice"];
+				$data["uid"] = $_POST["uid"];
+				$data["targetuid"] = $_POST["targetuid"];
+			}
+			
 			if (!empty($data["type"])){
 				$result = parent::callAPI("games/action", $data);
 			}

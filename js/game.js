@@ -68,6 +68,12 @@ const state = () => {
 
                 if (parseInt(data["mp"]) >= parseInt(card[i].cost)){
                     div.style.border = "2px solid darkgreen";
+
+                    let uid = card[i].uid;
+                    div.addEventListener("click", () =>{
+                        console.log(uid);
+                        playCard(uid);
+                    });
                 }
             }
 
@@ -177,18 +183,41 @@ let choice = "";
 
 const heroPower = () =>{
     choice = "HERO_POWER";
-    choice = gameChoice(choice);
+    uid = null;
+    targetuid = null;
+    choice = gameChoice(choice, uid, targetuid);
 }
 
 const endTurn = () =>{
     choice = "END_TURN";
-    choice = gameChoice(choice);
+    uid = null;
+    targetuid = null;
+    choice = gameChoice(choice, uid, targetuid);
 }
 
-const gameChoice = choice =>{
+const playCard = (uid) =>{
+    choice = "PLAY"
+    targetuid = null;
+    choice = gameChoice(choice, uid, targetuid);
+}
+
+const attack = (uid, targetuid) =>{
+    choice = "PLAY"
+    choice = gameChoice(choice, uid, targetuid);
+}
+
+const gameChoice = (choice, uid, targetuid) =>{
 
     let formData = new FormData();
     formData.append("choice", choice);
+
+    if (uid != null){
+        formData.append("uid", uid);
+    }
+
+    if (targetuid != null){
+        formData.append("targetuid", targetuid);
+    }
 
     fetch("ajax-action.php",{
         method: "POST",
