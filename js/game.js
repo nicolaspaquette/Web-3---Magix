@@ -1,3 +1,9 @@
+let uidCardsInHand = null;
+let uid = null;
+let targetuid = null;
+let attackingCard = null;
+let attackedCard = null;
+
 const state = () => {
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
         method : "POST",       // l’API (games/state)
@@ -55,6 +61,7 @@ const state = () => {
             div.querySelector(".cardMechanics").innerHTML = card[i].mechanics;
             div.querySelector(".cardATK").innerHTML = card[i].atk;
             div.querySelector(".cardHP").innerHTML = card[i].hp;
+            div.querySelector(".carduid").innerHTML = card[i].uid;
 
             for (let j = 0; j < card[i].mechanics.length; j++){
                 if (card[i].mechanics[j] == "Taunt"){
@@ -69,10 +76,11 @@ const state = () => {
                 if (parseInt(data["mp"]) >= parseInt(card[i].cost)){
                     div.style.border = "2px solid darkgreen";
 
-                    let uid = card[i].uid;
+                    
                     div.addEventListener("click", () =>{
-                        console.log(uid);
-                        playCard(uid);
+                        uidCardsInHand = parseInt(div.querySelector(".carduid").innerHTML);
+                        playCard(uidCardsInHand);
+                        uidCardsInHand = null;
                     });
                 }
             }
@@ -103,6 +111,7 @@ const state = () => {
             div.querySelector(".cardMechanics").innerHTML = card[i].mechanics;
             div.querySelector(".cardATK").innerHTML = card[i].atk;
             div.querySelector(".cardHP").innerHTML = card[i].hp;
+            div.querySelector(".carduid").innerHTML = card[i].uid;
 
             for (let j = 0; j < card[i].mechanics.length; j++){
                 if (card[i].mechanics[j] == "Taunt"){
@@ -110,6 +119,30 @@ const state = () => {
                     taunt.className = "cardTaunt";
                     div.appendChild(taunt);
                 }
+            }
+
+            if (data["yourTurn"] == true){
+
+                div.addEventListener("click", () =>{
+                    targetuid = parseInt(div.querySelector(".carduid").innerHTML);
+                    attackedCard = targetuid;
+            
+                    if (attackingCard != null && attackedCard != null){
+                        attack(uid, targetuid);
+                        attackingCard = null;
+                        attackedCard = null;
+                    }
+                });
+
+                document.querySelector(".portrait").addEventListener("click", () =>{
+                    targetuid = 0;
+                    attackedCard = targetuid;
+                    if (attackingCard != null && attackedCard == 0){
+                        attack(uid, targetuid);
+                        attackingCard = null;
+                        attackedCard = null;
+                    }
+                });
             }
 
             document.querySelector(".enemyBoard").appendChild(div);
@@ -129,6 +162,7 @@ const state = () => {
             div.querySelector(".cardMechanics").innerHTML = card[i].mechanics;
             div.querySelector(".cardATK").innerHTML = card[i].atk;
             div.querySelector(".cardHP").innerHTML = card[i].hp;
+            div.querySelector(".carduid").innerHTML = card[i].uid;
 
             for (let j = 0; j < card[i].mechanics.length; j++){
                 if (card[i].mechanics[j] == "Taunt"){
@@ -136,6 +170,15 @@ const state = () => {
                     taunt.className = "cardTaunt";
                     div.appendChild(taunt);
                 }
+            }
+
+            if (data["yourTurn"] == true){
+
+                div.addEventListener("click", () =>{
+                    uid = parseInt(div.querySelector(".carduid").innerHTML);
+                    attackingCard = uid;
+                    readyToAttack = true;
+                });
             }
 
             document.querySelector(".playerBoard").appendChild(div);
@@ -196,13 +239,13 @@ const endTurn = () =>{
 }
 
 const playCard = (uid) =>{
-    choice = "PLAY"
+    choice = "PLAY";
     targetuid = null;
     choice = gameChoice(choice, uid, targetuid);
 }
 
 const attack = (uid, targetuid) =>{
-    choice = "PLAY"
+    choice = "ATTACK";
     choice = gameChoice(choice, uid, targetuid);
 }
 
@@ -226,7 +269,6 @@ const gameChoice = (choice, uid, targetuid) =>{
     })
     .then (response => response.json())
     .then(data =>{
-        console.log(data);
     })
 
     choice = "";

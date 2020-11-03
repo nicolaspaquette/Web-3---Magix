@@ -622,3 +622,7 @@ html, body{
     text-align: center;
     top: 50%;
 }
+
+.carduid{
+    display: none;
+}

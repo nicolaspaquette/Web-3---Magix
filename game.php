@@ -78,6 +78,7 @@
 			<div class="cardMechanics"></div>
 			<div class="cardATK"></div>
 			<div class="cardHP"></div>
+			<div class="carduid"></div>
 		</template>
 
 		<div class="playerButtons">
