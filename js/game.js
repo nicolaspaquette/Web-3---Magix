@@ -14,6 +14,7 @@ const state = () => {
 
     if (typeof data !== "object"){
         if (data != "WAITING" ){
+            console.log(data);
             if (data == "LAST_GAME_WON"){
                 document.querySelector(".gameStatus").style.display = "flex";
                 document.querySelector(".gameStatus").innerHTML = "YOU WON !";
@@ -32,7 +33,7 @@ const state = () => {
                     window.location.href = "lobby.php";
                 }, 3000);
             }
-            else if (data == "NOT_IN GAME"){
+            else if (data == "NOT_IN_GAME"){
                 window.location.href = "lobby.php";
             }
         }
@@ -40,7 +41,7 @@ const state = () => {
 
     console.log(data); // contient les cartes/état du jeu.
     
-    if(data != "WAITING" && data != "LAST_GAME_WON" && data != "LAST_GAME_LOST"){
+    if(data != "WAITING" && data != "LAST_GAME_WON" && data != "LAST_GAME_LOST" && data != "NOT IN GAME"){
 
         // temps pour le tour
         document.querySelector(".timer").innerHTML = data["remainingTurnTime"];
