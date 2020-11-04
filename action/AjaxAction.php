@@ -18,7 +18,10 @@
 				if ($result == "INVALID_KEY"){
 					header("location:lobby.php");
                     exit;
-                }			
+				}
+				else{
+					return compact("result");
+				}		
 			}
 			else if ($_SESSION["game"] == "WATCH"){
 
@@ -28,9 +31,10 @@
 				if ($result == "INVALID_KEY"){
 					header("location:lobby.php");
                     exit;
-                }			
+				}
+				else{
+					return compact("result");
+				}
 			}
-			
-			return compact("result");
 		}
 	}

@@ -11,6 +11,33 @@ const state = () => {
     })
 .then(response => response.json())
 .then(data => {
+
+    if (typeof data !== "object"){
+        if (data != "WAITING" ){
+            if (data == "LAST_GAME_WON"){
+                document.querySelector(".gameStatus").style.display = "flex";
+                document.querySelector(".gameStatus").innerHTML = "YOU WON !";
+                document.querySelector(".gameStatus").style.color = "darkgreen";
+
+                setTimeout(function(){ 
+                    window.location.href = "lobby.php";
+                }, 3000);
+            }
+            else if (data == "LAST_GAME_LOST"){
+                document.querySelector(".gameStatus").style.display = "flex";
+                document.querySelector(".gameStatus").innerHTML = "YOU LOST !";
+                document.querySelector(".gameStatus").style.color = "red";
+
+                setTimeout(function(){ 
+                    window.location.href = "lobby.php";
+                }, 3000);
+            }
+            else if (data == "NOT_IN GAME"){
+                window.location.href = "lobby.php";
+            }
+        }
+    }
+
     console.log(data); // contient les cartes/état du jeu.
     
     if(data != "WAITING" && data != "LAST_GAME_WON" && data != "LAST_GAME_LOST"){
@@ -191,7 +218,7 @@ const state = () => {
         // boutons utilisables ou non
         if (data["yourTurn"] == true){
             if (parseInt(data["mp"]) >= 2 && !data["heroPowerAlreadyUsed"]){
-                document.querySelector(".heroPowerButton").style.border = "3px solid darkgreen";
+                document.querySelector(".heroPowerButton").style.border = "5px solid darkgreen";
             }
             else{
                 document.querySelector(".heroPowerButton").style.border = "3px solid black";
@@ -202,7 +229,7 @@ const state = () => {
         }
 
         if (data["yourTurn"] == true){
-            document.querySelector(".endTurnButton").style.border = "3px solid darkgreen";
+            document.querySelector(".endTurnButton").style.border = "5px solid darkgreen";
         }
         else{
             document.querySelector(".endTurnButton").style.border = "3px solid black";

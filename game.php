@@ -13,6 +13,8 @@
 	<div class="playerWelcomeText"></div>
 	<div class="enemyWelcomeText"></div>
 
+	<div class="gameStatus"></div>
+
 	<div class="enemy">
 
 		<div class="enemyCardsInHand"></div>
