@@ -125,6 +125,17 @@ const state = () => {
             document.querySelector(".enemyCardsInHand").appendChild(div);
         }
 
+        // click sur le portrait de l'ennemie pour l'attaquer
+        document.querySelector(".portrait").addEventListener("click", () =>{
+            targetuid = 0;
+            attackedCard = targetuid;
+            if (attackingCard != null && attackedCard == 0){
+                attack(uid, targetuid);
+                attackingCard = null;
+                attackedCard = null;
+            }
+        });
+
         // cartes jouees par l'ennemi
         document.querySelector(".enemyBoard").innerHTML = "";
         templateHTML = document.querySelector("#template").innerHTML;
@@ -156,16 +167,6 @@ const state = () => {
                     attackedCard = targetuid;
             
                     if (attackingCard != null && attackedCard != null){
-                        attack(uid, targetuid);
-                        attackingCard = null;
-                        attackedCard = null;
-                    }
-                });
-
-                document.querySelector(".portrait").addEventListener("click", () =>{
-                    targetuid = 0;
-                    attackedCard = targetuid;
-                    if (attackingCard != null && attackedCard == 0){
                         attack(uid, targetuid);
                         attackingCard = null;
                         attackedCard = null;
