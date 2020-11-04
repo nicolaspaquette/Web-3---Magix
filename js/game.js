@@ -18,11 +18,11 @@ const state = () => {
             if (data == "LAST_GAME_WON"){
                 document.querySelector(".gameStatus").style.display = "flex";
                 document.querySelector(".gameStatus").innerHTML = "YOU WON !";
-                document.querySelector(".gameStatus").style.color = "darkgreen";
+                document.querySelector(".gameStatus").style.color = "green";
 
                 setTimeout(function(){ 
                     window.location.href = "lobby.php";
-                }, 3000);
+                }, 5000);
             }
             else if (data == "LAST_GAME_LOST"){
                 document.querySelector(".gameStatus").style.display = "flex";
@@ -31,7 +31,7 @@ const state = () => {
 
                 setTimeout(function(){ 
                     window.location.href = "lobby.php";
-                }, 3000);
+                }, 5000);
             }
             else if (data == "NOT_IN_GAME"){
                 window.location.href = "lobby.php";
@@ -47,7 +47,7 @@ const state = () => {
         document.querySelector(".timer").innerHTML = data["remainingTurnTime"];
 
         if (data["yourTurn"] == true){
-            document.querySelector(".timer").style.color = "darkgreen";
+            document.querySelector(".timer").style.color = "green";
         }
         else{
             document.querySelector(".timer").style.color = "red";
@@ -102,7 +102,7 @@ const state = () => {
             if (data["yourTurn"] == true){
 
                 if (parseInt(data["mp"]) >= parseInt(card[i].cost)){
-                    div.style.border = "2px solid darkgreen";
+                    div.style.border = "2px solid green";
 
                     
                     div.addEventListener("click", () =>{
