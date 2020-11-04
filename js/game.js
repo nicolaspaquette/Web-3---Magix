@@ -14,7 +14,7 @@ const state = () => {
 
     if (typeof data !== "object"){
         if (data != "WAITING" ){
-            console.log(data);
+
             if (data == "LAST_GAME_WON"){
                 document.querySelector(".gameStatus").style.display = "flex";
                 document.querySelector(".gameStatus").innerHTML = "YOU WON !";
@@ -133,6 +133,13 @@ const state = () => {
                 attack(uid, targetuid);
                 attackingCard = null;
                 attackedCard = null;
+                uid = null;
+                targetuid = null;
+
+                document.querySelector(".portrait").style.border = "5px solid red";
+                setTimeout(function(){ 
+                    document.querySelector(".portrait").style.border = "3px solid black";
+                }, 1000);
             }
         });
 
@@ -165,11 +172,21 @@ const state = () => {
                 div.addEventListener("click", () =>{
                     targetuid = parseInt(div.querySelector(".carduid").innerHTML);
                     attackedCard = targetuid;
-            
+
                     if (attackingCard != null && attackedCard != null){
+
+                        div.style.border = "4px solid red";
+                            setTimeout(function(){
+                                if (div != null){
+                                    div.style.border = "0px solid black";
+                                } 
+                            }, 1000);
+
                         attack(uid, targetuid);
                         attackingCard = null;
                         attackedCard = null;
+                        uid = null;
+                        targetuid = null;
                     }
                 });
             }
@@ -212,6 +229,10 @@ const state = () => {
                     attackingCard = uid;
                     readyToAttack = true;
                 });
+
+                if (parseInt(div.querySelector(".carduid").innerHTML) == uid){
+                    div.style.border = "4px solid darkorange";
+                }
             }
 
             document.querySelector(".playerBoard").appendChild(div);

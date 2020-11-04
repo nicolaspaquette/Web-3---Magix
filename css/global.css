@@ -460,21 +460,19 @@ html, body{
 .enemyName{
     color: white;
     font-size: 25px;
-    padding-right: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
     width: 35%;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 5%;
 }
 
 .enemyClass{
     color: white;
     font-size: 25px;
-    padding-left: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
     width: 35%;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 5%;
 }
 
 .enemyWelcomeText{
