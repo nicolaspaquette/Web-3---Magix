@@ -7,32 +7,48 @@
 	require_once("partial/header.php");
 ?>
 
-<div class="lobby">
-    
-    <form action="" method="POST">
+<div class="lobbyPage">
 
-        <button class="buttonLobby" type="submit" name="Pratiquer">Pratique</button>
-        <button class="buttonLobby" type="submit" name="Jouer">Jouer</button>
-        <button class="buttonLobby" type="submit" name="Quitter">Quitter</button>
+    <div class="lobby">
+        
+        <form action="" method="POST">
 
-    </form>
+            <button class="buttonLobby" type="submit" name="Pratiquer">Pratique</button>
+            <button class="buttonLobby" type="submit" name="Jouer">Jouer</button>
+            <button class="buttonLobby" type="submit" name="Quitter">Quitter</button>
 
-    <?php
-            if ($data["logoutError"] == true){
-                ?>
-                <p style="color: red;">ERREUR DE DÉCONNEXION</p> 
-                <?php
-            }
-            else if ($data["gameError"] == true){
-                ?>
-                <p style="color: red;">ERREUR DE CONNEXION AU JEU</p> 
-                <?php
-            }
-    ?>
+        </form>
 
-    <iframe style="width:700px;height:240px; margin-bottom: 1em;" onload="applyStyles(this)"
-            src=<?="https://magix.apps-de-cours.com/server/#/chat/".$data["key"]?>>
-    </iframe>
+        <form action="" method ="POST">
+
+            <input class="input" type="text" name="nomJoueur" placeholder="nom du joueur" required>
+            <button class="buttonLobby" type="submit" name="Observer">Observer</button>
+
+        </form>
+
+        <?php
+                if ($data["logoutError"] == true){
+                    ?>
+                    <p style="color: red;">ERREUR DE DÉCONNEXION</p> 
+                    <?php
+                }
+                else if ($data["gameError"] == true){
+                    ?>
+                    <p style="color: red;">ERREUR DE CONNEXION AU JEU</p> 
+                    <?php
+                }
+                else if ($data["observeError"] == true){
+                    ?>
+                    <p style="color: red;">ERREUR DE CONNEXION POUR OBSERVER UN JOUEUR</p> 
+                    <?php
+                }
+        ?>
+
+        <iframe onload="applyStyles(this)"
+                src=<?="https://magix.apps-de-cours.com/server/#/chat/".$data["key"]."/large"?>>
+        </iframe>
+
+    </div>
 
     <div class="Minsc">
         <p>Take heart fellow adventurers, <br>

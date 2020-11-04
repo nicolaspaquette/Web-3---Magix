@@ -17,6 +17,7 @@
 			$title = "Lobby";
 			$logoutError = false;
 			$gameError = false;
+			$observeError = false;
 			$key = $_SESSION["key"];
 
 			if (isset($_POST["Pratiquer"]) || isset($_POST["Jouer"])){
@@ -36,6 +37,7 @@
 					$gameError = true;
                 }
                 else if ($result == "JOINED_PVP" || $result == "CREATED_PVP" || $result == "JOINED_TRAINING"){
+					$_SESSION["game"] = "PLAY";
                     header("location:game.php");
                     exit;
                 }				
@@ -56,7 +58,25 @@
                     exit;
                 }
 			}
+			else if (isset($_POST["Observer"]) && !empty($_POST["nomJoueur"])){
+				$data = [];
+				$data["key"] = $_SESSION["key"];
+
+				$data["username"] = $_POST["nomJoueur"];
+				$result = parent::callAPI("games/observe", $data);
+
+				if ($result == "INVALID_KEY"){
+                    $observeError = true;
+				}
+				else{
+					$_SESSION["game"] = "WATCH";
+					$_SESSION["nomJoueur"] = $_POST["nomJoueur"];
+					header("location:game.php");
+                    exit;
+				}
+                
+			}
 			
-			return compact("logoutError", "title", "key", "gameError");
+			return compact("logoutError", "title", "key", "gameError", "observeError");
         }
 	}
