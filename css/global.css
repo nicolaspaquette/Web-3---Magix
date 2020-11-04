@@ -45,6 +45,9 @@ html, body{
 .button{
     border:2px solid black;
     width: 200px;
+    border-radius: 15px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 
 .button:hover{
@@ -110,7 +113,7 @@ html, body{
     margin-top: 2em;
     margin-bottom: 1em;
     height: 562px;
-    width: 800px;
+    width: 610px;
 }
 
 .buttonLobby{
@@ -139,7 +142,7 @@ html, body{
     height: 450px;
     position: absolute;
     top: 55%;
-    left: 0%;
+    left: 1%;
 }
 
 .Minsc p{
@@ -157,13 +160,13 @@ html, body{
     left: -38%;
 }
 
-@media screen and (max-width: 1650px){
+@media screen and (max-width: 1500px){
     .Minsc p{
         display: none;
     }
 }
 
-@media screen and (max-width: 1475px){
+@media screen and (max-width: 1350px){
     .Minsc{
         display: none;
     }
