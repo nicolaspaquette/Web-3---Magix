@@ -93,39 +93,7 @@ const state = () => {
             div.querySelector(".cardHP").innerHTML = card[i].hp;
             div.querySelector(".carduid").innerHTML = card[i].uid;
 
-            if (card[i].cost == 1){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/goblin.PNG')";
-            }
-            else if (card[i].cost == 2){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/orc.png')";
-            }
-            else if (card[i].cost == 3){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mimic.jpeg')";
-            }
-            else if (card[i].cost == 4){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/gelatinousCube.jpg')";
-            }
-            else if (card[i].cost == 5){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/rakshasa.jpg')";
-            }
-            else if (card[i].cost == 6){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mindflayer.jpg')";
-            }
-            else if (card[i].cost == 7){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/beholder.jpg')";
-            }
-            else if (card[i].cost == 8){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/planatar.jpg')";
-            }
-            else if (card[i].cost == 9){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/redDragon.jpg')";
-            }
-            else if (card[i].cost == 10){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/tarrasque.jpg')";
-            }
-            else{
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/flumph.jpg')"
-            }
+            div.querySelector(".cardImage").style.backgroundImage = cardImage(card[i].cost);
 
             for (let j = 0; j < card[i].mechanics.length; j++){
                 if (card[i].mechanics[j] == "Taunt"){
@@ -195,39 +163,7 @@ const state = () => {
             div.querySelector(".cardHP").innerHTML = card[i].hp;
             div.querySelector(".carduid").innerHTML = card[i].uid;
 
-            if (card[i].cost == 1){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/goblin.PNG')";
-            }
-            else if (card[i].cost == 2){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/orc.png')";
-            }
-            else if (card[i].cost == 3){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mimic.jpeg')";
-            }
-            else if (card[i].cost == 4){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/gelatinousCube.jpg')";
-            }
-            else if (card[i].cost == 5){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/rakshasa.jpg')";
-            }
-            else if (card[i].cost == 6){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mindflayer.jpg')";
-            }
-            else if (card[i].cost == 7){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/beholder.jpg')";
-            }
-            else if (card[i].cost == 8){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/planatar.jpg')";
-            }
-            else if (card[i].cost == 9){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/redDragon.jpg')";
-            }
-            else if (card[i].cost == 10){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/tarrasque.jpg')";
-            }
-            else{
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/flumph.jpg')"
-            }
+            div.querySelector(".cardImage").style.backgroundImage = cardImage(card[i].cost);
 
             for (let j = 0; j < card[i].mechanics.length; j++){
                 if (card[i].mechanics[j] == "Taunt"){
@@ -280,39 +216,7 @@ const state = () => {
             div.querySelector(".cardHP").innerHTML = card[i].hp;
             div.querySelector(".carduid").innerHTML = card[i].uid;
 
-            if (card[i].cost == 1){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/goblin.PNG')";
-            }
-            else if (card[i].cost == 2){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/orc.png')";
-            }
-            else if (card[i].cost == 3){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mimic.jpeg')";
-            }
-            else if (card[i].cost == 4){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/gelatinousCube.jpg')";
-            }
-            else if (card[i].cost == 5){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/rakshasa.jpg')";
-            }
-            else if (card[i].cost == 6){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mindflayer.jpg')";
-            }
-            else if (card[i].cost == 7){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/beholder.jpg')";
-            }
-            else if (card[i].cost == 8){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/planatar.jpg')";
-            }
-            else if (card[i].cost == 9){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/redDragon.jpg')";
-            }
-            else if (card[i].cost == 10){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/tarrasque.jpg')";
-            }
-            else{
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/flumph.jpg')"
-            }
+            div.querySelector(".cardImage").style.backgroundImage = cardImage(card[i].cost);
 
             for (let j = 0; j < card[i].mechanics.length; j++){
                 if (card[i].mechanics[j] == "Taunt"){
@@ -431,4 +335,44 @@ const gameChoice = (choice, uid, targetuid) =>{
 
     choice = "";
     return choice;
+}
+
+const cardImage = (cardCost) =>{
+    let cardImage = "";
+
+    if (cardCost == 1){
+        cardImage = "url('./images/goblin.PNG')";
+    }
+    else if (cardCost == 2){
+        cardImage = "url('./images/orc.png')";
+    }
+    else if (cardCost == 3){
+        cardImage = "url('./images/mimic.jpeg')";
+    }
+    else if (cardCost == 4){
+        cardImage = "url('./images/gelatinousCube.jpg')";
+    }
+    else if (cardCost == 5){
+        cardImage = "url('./images/rakshasa.jpg')";
+    }
+    else if (cardCost == 6){
+        cardImage = "url('./images/mindflayer.jpg')";
+    }
+    else if (cardCost == 7){
+        cardImage = "url('./images/beholder.jpg')";
+    }
+    else if (cardCost == 8){
+        cardImage = "url('./images/planatar.jpg')";
+    }
+    else if (cardCost == 9){
+        cardImage = "url('./images/redDragon.jpg')";
+    }
+    else if (cardCost == 10){
+        cardImage = "url('./images/tarrasque.jpg')";
+    }
+    else{
+        cardImage = "url('./images/flumph.jpg')";
+    }
+
+    return cardImage;
 }
