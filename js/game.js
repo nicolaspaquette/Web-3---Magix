@@ -93,6 +93,40 @@ const state = () => {
             div.querySelector(".cardHP").innerHTML = card[i].hp;
             div.querySelector(".carduid").innerHTML = card[i].uid;
 
+            if (card[i].cost == 1){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/goblin.jpg')";
+            }
+            else if (card[i].cost == 2){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/orc.jpeg')";
+            }
+            else if (card[i].cost == 3){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/intellectDevourer.png')";
+            }
+            else if (card[i].cost == 4){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/gelatinousCube.jpg')";
+            }
+            else if (card[i].cost == 5){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/rakshasa.jpg')";
+            }
+            else if (card[i].cost == 6){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mindflayer.png')";
+            }
+            else if (card[i].cost == 7){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/beholder.jpg')";
+            }
+            else if (card[i].cost == 8){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/planatar.jpeg')";
+            }
+            else if (card[i].cost == 9){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/redDragon.jpg')";
+            }
+            else if (card[i].cost == 10){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/tarrasque.jpg')";
+            }
+            else{
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/flumph.jpg')"
+            }
+
             for (let j = 0; j < card[i].mechanics.length; j++){
                 if (card[i].mechanics[j] == "Taunt"){
                     let taunt = document.createElement("div");
@@ -161,6 +195,40 @@ const state = () => {
             div.querySelector(".cardHP").innerHTML = card[i].hp;
             div.querySelector(".carduid").innerHTML = card[i].uid;
 
+            if (card[i].cost == 1){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/goblin.jpg')";
+            }
+            else if (card[i].cost == 2){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/orc.jpeg')";
+            }
+            else if (card[i].cost == 3){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/intellectDevourer.png')";
+            }
+            else if (card[i].cost == 4){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/gelatinousCube.jpg')";
+            }
+            else if (card[i].cost == 5){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/rakshasa.jpg')";
+            }
+            else if (card[i].cost == 6){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mindflayer.png')";
+            }
+            else if (card[i].cost == 7){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/beholder.jpg')";
+            }
+            else if (card[i].cost == 8){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/planatar.jpeg')";
+            }
+            else if (card[i].cost == 9){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/redDragon.jpg')";
+            }
+            else if (card[i].cost == 10){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/tarrasque.jpg')";
+            }
+            else{
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/flumph.jpg')"
+            }
+
             for (let j = 0; j < card[i].mechanics.length; j++){
                 if (card[i].mechanics[j] == "Taunt"){
                     let taunt = document.createElement("div");
@@ -211,6 +279,40 @@ const state = () => {
             div.querySelector(".cardATK").innerHTML = card[i].atk;
             div.querySelector(".cardHP").innerHTML = card[i].hp;
             div.querySelector(".carduid").innerHTML = card[i].uid;
+
+            if (card[i].cost == 1){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/goblin.jpg')";
+            }
+            else if (card[i].cost == 2){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/orc.jpeg')";
+            }
+            else if (card[i].cost == 3){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/intellectDevourer.png')";
+            }
+            else if (card[i].cost == 4){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/gelatinousCube.jpg')";
+            }
+            else if (card[i].cost == 5){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/rakshasa.jpg')";
+            }
+            else if (card[i].cost == 6){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mindflayer.png')";
+            }
+            else if (card[i].cost == 7){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/beholder.jpg')";
+            }
+            else if (card[i].cost == 8){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/planatar.jpeg')";
+            }
+            else if (card[i].cost == 9){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/redDragon.jpg')";
+            }
+            else if (card[i].cost == 10){
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/tarrasque.jpg')";
+            }
+            else{
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/flumph.jpg')"
+            }
 
             for (let j = 0; j < card[i].mechanics.length; j++){
                 if (card[i].mechanics[j] == "Taunt"){
