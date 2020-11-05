@@ -94,13 +94,13 @@ const state = () => {
             div.querySelector(".carduid").innerHTML = card[i].uid;
 
             if (card[i].cost == 1){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/goblin.jpg')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/goblin.PNG')";
             }
             else if (card[i].cost == 2){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/orc.jpeg')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/orc.png')";
             }
             else if (card[i].cost == 3){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/intellectDevourer.png')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mimic.jpeg')";
             }
             else if (card[i].cost == 4){
                 div.querySelector(".cardImage").style.backgroundImage = "url('./images/gelatinousCube.jpg')";
@@ -109,13 +109,13 @@ const state = () => {
                 div.querySelector(".cardImage").style.backgroundImage = "url('./images/rakshasa.jpg')";
             }
             else if (card[i].cost == 6){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mindflayer.png')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mindflayer.jpg')";
             }
             else if (card[i].cost == 7){
                 div.querySelector(".cardImage").style.backgroundImage = "url('./images/beholder.jpg')";
             }
             else if (card[i].cost == 8){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/planatar.jpeg')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/planatar.jpg')";
             }
             else if (card[i].cost == 9){
                 div.querySelector(".cardImage").style.backgroundImage = "url('./images/redDragon.jpg')";
@@ -196,13 +196,13 @@ const state = () => {
             div.querySelector(".carduid").innerHTML = card[i].uid;
 
             if (card[i].cost == 1){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/goblin.jpg')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/goblin.PNG')";
             }
             else if (card[i].cost == 2){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/orc.jpeg')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/orc.png')";
             }
             else if (card[i].cost == 3){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/intellectDevourer.png')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mimic.jpeg')";
             }
             else if (card[i].cost == 4){
                 div.querySelector(".cardImage").style.backgroundImage = "url('./images/gelatinousCube.jpg')";
@@ -211,13 +211,13 @@ const state = () => {
                 div.querySelector(".cardImage").style.backgroundImage = "url('./images/rakshasa.jpg')";
             }
             else if (card[i].cost == 6){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mindflayer.png')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mindflayer.jpg')";
             }
             else if (card[i].cost == 7){
                 div.querySelector(".cardImage").style.backgroundImage = "url('./images/beholder.jpg')";
             }
             else if (card[i].cost == 8){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/planatar.jpeg')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/planatar.jpg')";
             }
             else if (card[i].cost == 9){
                 div.querySelector(".cardImage").style.backgroundImage = "url('./images/redDragon.jpg')";
@@ -281,13 +281,13 @@ const state = () => {
             div.querySelector(".carduid").innerHTML = card[i].uid;
 
             if (card[i].cost == 1){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/goblin.jpg')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/goblin.PNG')";
             }
             else if (card[i].cost == 2){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/orc.jpeg')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/orc.png')";
             }
             else if (card[i].cost == 3){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/intellectDevourer.png')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mimic.jpeg')";
             }
             else if (card[i].cost == 4){
                 div.querySelector(".cardImage").style.backgroundImage = "url('./images/gelatinousCube.jpg')";
@@ -296,13 +296,13 @@ const state = () => {
                 div.querySelector(".cardImage").style.backgroundImage = "url('./images/rakshasa.jpg')";
             }
             else if (card[i].cost == 6){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mindflayer.png')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/mindflayer.jpg')";
             }
             else if (card[i].cost == 7){
                 div.querySelector(".cardImage").style.backgroundImage = "url('./images/beholder.jpg')";
             }
             else if (card[i].cost == 8){
-                div.querySelector(".cardImage").style.backgroundImage = "url('./images/planatar.jpeg')";
+                div.querySelector(".cardImage").style.backgroundImage = "url('./images/planatar.jpg')";
             }
             else if (card[i].cost == 9){
                 div.querySelector(".cardImage").style.backgroundImage = "url('./images/redDragon.jpg')";
