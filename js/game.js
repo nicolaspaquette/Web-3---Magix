@@ -16,6 +16,7 @@ const state = () => {
         if (data != "WAITING" ){
 
             if (data == "LAST_GAME_WON"){
+                document.querySelector(".enemyHealthValue").innerHTML = "0";
                 document.querySelector(".gameStatus").style.display = "flex";
                 document.querySelector(".gameStatus").innerHTML = "YOU WON !";
                 document.querySelector(".gameStatus").style.color = "green";
@@ -25,6 +26,7 @@ const state = () => {
                 }, 5000);
             }
             else if (data == "LAST_GAME_LOST"){
+                document.querySelector(".playerHealthValue").innerHTML = "0";
                 document.querySelector(".gameStatus").style.display = "flex";
                 document.querySelector(".gameStatus").innerHTML = "YOU LOST !";
                 document.querySelector(".gameStatus").style.color = "red";
