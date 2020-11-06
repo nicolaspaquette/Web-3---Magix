@@ -84,6 +84,7 @@
 		</template>
 
 		<div class="playerButtons">
+			<div class="gameError"></div>
 			<button class="heroPowerButton" type="submit" name="heroPower" onclick="heroPower()">Hero Power</button>
 			<button class="endTurnButton" type="submit" name="endTurn" onclick="endTurn()">End Turn</button>
 			<button class="chatButton" type="submit" name="chat" onclick="showHideChat()">Show/Hide Chat</button>

@@ -41,7 +41,7 @@ const state = () => {
         }
     }
 
-    console.log(data); // contient les cartes/état du jeu.
+    // console.log(data); // contient les cartes/état du jeu.
     
     if(data != "WAITING" && data != "LAST_GAME_WON" && data != "LAST_GAME_LOST" && data != "NOT IN GAME"){
 
@@ -331,6 +331,47 @@ const gameChoice = (choice, uid, targetuid) =>{
     })
     .then (response => response.json())
     .then(data =>{
+        
+        if (data == "INVALID_ACTION"){
+            document.querySelector(".gameError").innerHTML = "Action invalide";
+        }
+        else if (data == "ACTION_IS_NOT_AN_OBJECT"){
+            document.querySelector(".gameError").innerHTML = "Mauvaise structure de données";
+        }
+        else if (data == "NOT_ENOUGH_ENERGY"){
+            document.querySelector(".gameError").innerHTML = "Pas assez d'énergie restante pour jouer la carte";
+        }
+        else if (data == "BOARD_IS_FULL"){
+            document.querySelector(".gameError").innerHTML = "Pas assez de place sur le jeu";
+        }
+        else if (data == "CARD_NOT_IN_HAND"){
+            document.querySelector(".gameError").innerHTML = "La carte n'est pas dans votre main";
+        }
+        else if (data == "CARD_IS_SLEEPING"){
+            document.querySelector(".gameError").innerHTML = "La carte ne peut pas attaquer ce tour-ci";
+        }
+        else if (data == "MUST_ATTACK_TAUNT_FIRST"){
+            document.querySelector(".gameError").innerHTML = "Vous devez attaquer la carte 'Taunt' en premier";
+        }
+        else if (data == "OPPONENT_CARD_NOT_FOUND"){
+            document.querySelector(".gameError").innerHTML = "La carte attaquée n'est pas présente sur le jeu";
+        }
+        else if (data == "CARD_NOT_FOUND"){
+            document.querySelector(".gameError").innerHTML = "La carte n'est pas présente";
+        }
+        else if (data == "ERROR_PROCESSING_ACTION"){
+            document.querySelector(".gameError").innerHTML = "Erreur interne";
+        }
+        else if (data == "INTERNAL_ACTION_ERROR"){
+            document.querySelector(".gameError").innerHTML = "Erreur interne";
+        }
+        else if (data == "HERO_POWER_ALREADY_USED"){
+            document.querySelector(".gameError").innerHTML = "Pouvoir du héro déjà utilisé pour ce tour ";
+        }
+
+        setTimeout(function(){ 
+            document.querySelector(".gameError").innerHTML = '';
+        }, 5000);
     })
 
     choice = "";

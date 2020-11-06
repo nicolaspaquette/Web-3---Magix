@@ -49,12 +49,15 @@
 				$result = parent::callAPI("signout", $data);
 
 				if ($result == "INVALID_KEY"){
-                    $logoutError = true;
+					$logoutError = true;
+
+					header("location:login.php");
+                    exit;
                 }
                 else {
                     unset($_SESSION["key"]);
 
-                    header("location:lobby.php");
+                    header("location:login.php");
                     exit;
                 }
 			}
