@@ -41,7 +41,7 @@ const state = () => {
         }
     }
 
-    // console.log(data); // contient les cartes/état du jeu.
+    console.log(data); // contient les cartes/état du jeu.
     
     if(data != "WAITING" && data != "LAST_GAME_WON" && data != "LAST_GAME_LOST" && data != "NOT IN GAME"){
 

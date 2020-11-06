@@ -27,7 +27,11 @@
 				if (isset($_POST["Pratiquer"])){
 					$data["type"] = "TRAINING";
 				}
-				else{
+				else if (isset($_POST["Jouer"]) && !empty($_POST["code"])){
+					$data["type"] = "PVP";
+					$data["private-key"] = $_POST["code"];
+				}
+				else if (isset($_POST["Jouer"]) && empty($_POST["code"])){
 					$data["type"] = "PVP";
 				}
 			

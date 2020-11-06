@@ -14,6 +14,7 @@
         <form action="" method="POST">
 
             <button class="buttonLobby" type="submit" name="Pratiquer">Pratique</button>
+            <input class="input" type="text" name="code" placeholder="Clé privée (optionnel)">
             <button class="buttonLobby" type="submit" name="Jouer">Jouer</button>
             <button class="buttonLobby" type="submit" name="Quitter">Quitter</button>
 
@@ -21,8 +22,9 @@
 
         <form action="" method ="POST">
 
-            <input class="input" type="text" name="nomJoueur" placeholder="nom du joueur" required>
+            <input class="input" type="text" name="nomJoueur" placeholder="Nom du joueur" required>
             <button class="buttonLobby" type="submit" name="Observer">Observer</button>
+            <button class="buttonLobby" type="submit" name="Historique">Historique</button>
 
         </form>
 
