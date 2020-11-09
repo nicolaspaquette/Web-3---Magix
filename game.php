@@ -53,7 +53,12 @@
 		</div>
 
 		<div class="battlefieldBorder">
-			<p class="timer"></p>
+
+			<div class=compteur>
+				<div class="hourglass"></div>
+				<p class="timer"></p>
+			</div>
+			
 		</div>
 
 	</div>
