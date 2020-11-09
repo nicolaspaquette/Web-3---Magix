@@ -3,6 +3,7 @@ let uid = null;
 let targetuid = null;
 let attackingCard = null;
 let attackedCard = null;
+
 let newTurn = true;
 let angle = 0;
 let enemyEndTurn = false;
@@ -50,7 +51,6 @@ const state = () => {
 
         // temps pour le tour
         document.querySelector(".timer").innerHTML = data["remainingTurnTime"];
-        console.log(newTurn);
 
         if (data["yourTurn"] == true){
             document.querySelector(".timer").style.color = "green";
@@ -298,7 +298,6 @@ const heroPower = () =>{
 }
 
 const endTurn = () =>{
-    newTurn = true;
     choice = "END_TURN";
     uid = null;
     targetuid = null;
