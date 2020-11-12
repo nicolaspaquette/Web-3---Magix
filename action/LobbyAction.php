@@ -29,7 +29,7 @@
 				}
 				else if (isset($_POST["Jouer"]) && !empty($_POST["code"])){
 					$data["type"] = "PVP";
-					$data["private-key"] = $_POST["code"];
+					$data["privateKey"] = $_POST["code"];
 				}
 				else if (isset($_POST["Jouer"]) && empty($_POST["code"])){
 					$data["type"] = "PVP";
