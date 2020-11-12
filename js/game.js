@@ -370,7 +370,7 @@ const gameChoice = (choice, uid, targetuid) =>{
             document.querySelector(".gameError").innerHTML = "Erreur interne";
         }
         else if (data == "HERO_POWER_ALREADY_USED"){
-            document.querySelector(".gameError").innerHTML = "Pouvoir du héro déjà utilisé pour ce tour ";
+            document.querySelector(".gameError").innerHTML = "Pouvoir du héro déjà utilisé pour ce tour";
         }
 
         setTimeout(function(){ 
