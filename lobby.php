@@ -13,18 +13,20 @@
         
         <form action="" method="POST">
 
-            <button class="buttonLobby" type="submit" name="Pratiquer">Pratique</button>
+            <button class="buttonLobby" type="submit" name="Pratiquer">Pratique Solo</button>
+            <button class="buttonLobby" type="submit" name="Pratiquer2v1">Pratique Coop</button>
             <input class="input" type="text" name="code" placeholder="Clé privée (optionnel)">
-            <button class="buttonLobby" type="submit" name="Jouer">Jouer</button>
-            <button class="buttonLobby" type="submit" name="Quitter">Quitter</button>
+            <button class="buttonLobby" type="submit" name="Jouer">Jouer Solo</button>
+            <button class="buttonLobby" type="submit" name="Jouer2v1">Jouer Coop</button>
 
         </form>
 
         <form action="" method ="POST">
 
-            <input class="input" type="text" name="nomJoueur" placeholder="Nom du joueur" required>
+            <input class="input" type="text" name="nomJoueur" placeholder="Nom du joueur">
             <button class="buttonLobby" type="submit" name="Observer">Observer</button>
             <button class="buttonLobby" type="submit" name="Historique">Historique</button>
+            <button class="buttonLobby" type="submit" name="Quitter">Quitter</button>
 
         </form>
 

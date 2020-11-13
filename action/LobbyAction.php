@@ -20,19 +20,26 @@
 			$observeError = false;
 			$key = $_SESSION["key"];
 
-			if (isset($_POST["Pratiquer"]) || isset($_POST["Jouer"])){
+			if (isset($_POST["Pratiquer"]) || isset($_POST["Jouer"]) || isset($_POST["Pratiquer2v1"]) || isset($_POST["Jouer2v1"])){
 				$data = [];
 				$data["key"] = $_SESSION["key"];
 
-				if (isset($_POST["Pratiquer"])){
+				if (isset($_POST["Pratiquer"]) || isset($_POST["Pratiquer2v1"])){
 					$data["type"] = "TRAINING";
 				}
-				else if (isset($_POST["Jouer"]) && !empty($_POST["code"])){
+				else if ((isset($_POST["Jouer"]) || isset($_POST["Jouer2v1"])) && !empty($_POST["code"])){
 					$data["type"] = "PVP";
 					$data["privateKey"] = $_POST["code"];
 				}
 				else if (isset($_POST["Jouer"]) && empty($_POST["code"])){
 					$data["type"] = "PVP";
+				}
+
+				if (isset($_POST["Pratiquer2v1"]) || isset($_POST["Jouer2v1"])){
+					$data["mode"] = "COOP";
+				}
+				else{
+					$data["mode"] = "STANDARD";
 				}
 			
 				$result = parent::callAPI("games/auto-match", $data);
