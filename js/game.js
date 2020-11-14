@@ -8,10 +8,23 @@ let newTurn = true;
 let angle = 0;
 let enemyEndTurn = false;
 
+let nomJoueur = null;
+let nomAdversaire = null;
+let datePartie = null;
+let nomGagnant = null;
+
 const state = () => {
+
+    let formData = new FormData();
+    formData.append("nomJoueur", nomJoueur);
+    formData.append("nomAdversaire", nomAdversaire);
+    formData.append("datePartie", datePartie);
+    formData.append("nomGagnant", nomGagnant);
+
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
         method : "POST",       // l’API (games/state)
-        credentials: "include"
+        credentials: "include",
+        body: formData
     })
 .then(response => response.json())
 .then(data => {
@@ -25,6 +38,10 @@ const state = () => {
                 document.querySelector(".gameStatus").innerHTML = "YOU WON !";
                 document.querySelector(".gameStatus").style.color = "green";
 
+                let date = new Date();
+                datePartie = date.getFullYear().toString() + "-" + date.getMonth().toString() + "-" + date.getDate().toString();
+                nomGagnant = nomJoueur;
+
                 setTimeout(function(){ 
                     window.location.href = "lobby.php";
                 }, 5000);
@@ -34,6 +51,10 @@ const state = () => {
                 document.querySelector(".gameStatus").style.display = "flex";
                 document.querySelector(".gameStatus").innerHTML = "YOU LOST !";
                 document.querySelector(".gameStatus").style.color = "red";
+
+                let date = new Date();
+                datePartie = date.getFullYear().toString() + "-" + date.getMonth().toString() + "-" + date.getDate().toString();
+                nomGagnant = nomAdversaire;
 
                 setTimeout(function(){ 
                     window.location.href = "lobby.php";
@@ -48,6 +69,9 @@ const state = () => {
     console.log(data); // contient les cartes/état du jeu.
     
     if(data != "WAITING" && data != "LAST_GAME_WON" && data != "LAST_GAME_LOST" && data != "NOT IN GAME"){
+
+        nomJoueur = data["username"];
+        nomAdversaire= data["opponent"]["username"];
 
         // temps pour le tour
         document.querySelector(".timer").innerHTML = data["remainingTurnTime"];
@@ -328,7 +352,7 @@ const gameChoice = (choice, uid, targetuid) =>{
         formData.append("targetuid", targetuid);
     }
 
-    fetch("ajax-action.php",{
+    fetch("ajax-choice.php",{
         method: "POST",
         credentials: "include",
         body: formData

@@ -1,5 +1,6 @@
 <?php
-    require_once("action/CommonAction.php");
+	require_once("action/CommonAction.php");
+	require_once("action/DAO/HistoryDAO.php");
     
 	class AjaxAction extends CommonAction {
 
@@ -8,10 +9,20 @@
 		}
 
 		protected function executeAction() {
+
 			$data = [];
 			$data["key"] = $_SESSION["key"];
 
 			if ($_SESSION["game"] == "PLAY"){
+
+				if ($_POST["datePartie"] != null && $_POST["nomGagnant"] != null){
+					$nomJoueur = $_POST["nomJoueur"];
+					$nomAdversaire = $_POST["nomAdversaire"];
+					$datePartie = $_POST["datePartie"];
+					$nomGagnant = $_POST["nomGagnant"];
+					
+					HistoryDAO::addHistory($nomJoueur, $nomAdversaire, $datePartie, $nomGagnant);
+				}
 
 				$result = parent::callAPI("games/state", $data);
 
