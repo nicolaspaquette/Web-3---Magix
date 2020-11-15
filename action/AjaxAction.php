@@ -21,7 +21,7 @@
 					$datePartie = $_POST["datePartie"];
 					$nomGagnant = $_POST["nomGagnant"];
 					
-					HistoryDAO::addHistory($nomJoueur, $nomAdversaire, $datePartie, $nomGagnant);
+					//HistoryDAO::addHistory($nomJoueur, $nomAdversaire, $datePartie, $nomGagnant);
 				}
 
 				$result = parent::callAPI("games/state", $data);
