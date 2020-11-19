@@ -12,11 +12,13 @@
 <?php
 	foreach ($data["histories"] as $history){ ?>
 
-		<div><?= $history["nomJoueur"] ?></div>
-		<div><?= $history["nomAdversaire"] ?></div>
-        <div><?= $history["datePartie"] ?></div>
-		<div><?= $history["nomGagnant"] ?></div>
-
+	<div>
+		<div><?= $history["nomjoueur"] ?></div>
+		<div><?= $history["nomadversaire"] ?></div>
+        <div><?= $history["datepartie"] ?></div>
+		<div><?= $history["nomgagnant"] ?></div>
+	</div>
+	
 	<?php
 	}
 ?>

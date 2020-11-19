@@ -10,7 +10,7 @@
 
         protected function executeAction() {
 
-            $histories = AnswerDAO::getAnswer();
+            $histories = HistoryDAO::getHistory();
             return compact("histories");
         }
     }

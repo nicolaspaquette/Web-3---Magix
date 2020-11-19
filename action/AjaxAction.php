@@ -15,13 +15,18 @@
 
 			if ($_SESSION["game"] == "PLAY"){
 
-				if ($_POST["datePartie"] != null && $_POST["nomGagnant"] != null){
-					$nomJoueur = $_POST["nomJoueur"];
+				if ($_POST["nomGagnant"] != null && $_POST["counter"] == 1){
+					$nomJoueur = $_SESSION["username"];
 					$nomAdversaire = $_POST["nomAdversaire"];
-					$datePartie = $_POST["datePartie"];
-					$nomGagnant = $_POST["nomGagnant"];
 					
-					//HistoryDAO::addHistory($nomJoueur, $nomAdversaire, $datePartie, $nomGagnant);
+					if ($_POST["nomGagnant"] == "nomJoueur"){
+						$nomGagnant = $nomJoueur;
+					}
+					else if ($_POST["nomGagnant"] == "nomAdversaire"){
+						$nomGagnant = $nomAdversaire;
+					}
+					
+					HistoryDAO::addHistory($nomJoueur, $nomAdversaire, $nomGagnant);
 				}
 
 				$result = parent::callAPI("games/state", $data);

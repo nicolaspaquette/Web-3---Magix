@@ -12,14 +12,14 @@ let nomJoueur = null;
 let nomAdversaire = null;
 let datePartie = null;
 let nomGagnant = null;
+let counter = 0;
 
 const state = () => {
 
     let formData = new FormData();
-    formData.append("nomJoueur", nomJoueur);
     formData.append("nomAdversaire", nomAdversaire);
-    formData.append("datePartie", datePartie);
     formData.append("nomGagnant", nomGagnant);
+    formData.append("counter", counter);
 
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
         method : "POST",       // l’API (games/state)
@@ -38,9 +38,8 @@ const state = () => {
                 document.querySelector(".gameStatus").innerHTML = "YOU WON !";
                 document.querySelector(".gameStatus").style.color = "green";
 
-                let date = new Date();
-                datePartie = date.getFullYear().toString() + "-" + date.getMonth().toString() + "-" + date.getDate().toString();
-                nomGagnant = nomJoueur;
+                nomGagnant = "nomJoueur";
+                counter++;
 
                 setTimeout(function(){ 
                     window.location.href = "lobby.php";
@@ -52,9 +51,8 @@ const state = () => {
                 document.querySelector(".gameStatus").innerHTML = "YOU LOST !";
                 document.querySelector(".gameStatus").style.color = "red";
 
-                let date = new Date();
-                datePartie = date.getFullYear().toString() + "-" + date.getMonth().toString() + "-" + date.getDate().toString();
-                nomGagnant = nomAdversaire;
+                nomGagnant = "nomAdversaire";
+                counter++;
 
                 setTimeout(function(){ 
                     window.location.href = "lobby.php";
@@ -70,7 +68,6 @@ const state = () => {
     
     if(data != "WAITING" && data != "LAST_GAME_WON" && data != "LAST_GAME_LOST" && data != "NOT IN GAME"){
 
-        nomJoueur = data["username"];
         nomAdversaire= data["opponent"]["username"];
 
         // temps pour le tour

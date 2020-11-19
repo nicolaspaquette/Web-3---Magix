@@ -90,6 +90,10 @@
 				}
                 
 			}
+			else if (isset($_POST["Historique"])){
+				header("location:history.php");
+				exit;
+			}
 			
 			return compact("logoutError", "title", "key", "gameError", "observeError");
         }
