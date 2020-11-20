@@ -7,7 +7,7 @@
         public static function getHistory() {
             $connection = Connection::getConnection();
 
-            $statement = $connection->prepare("SELECT * FROM magix ORDER BY datepartie DESC LIMIT 10");
+            $statement = $connection->prepare("SELECT * FROM magix ORDER BY id DESC LIMIT 10");
             $statement->setFetchMode(PDO::FETCH_ASSOC); // retourne les données comme un dictionnnaire. Ex : $line["username"]
             $statement->execute();  
 

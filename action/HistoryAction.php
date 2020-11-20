@@ -10,7 +10,8 @@
 
         protected function executeAction() {
 
+            $title = "History";
             $histories = HistoryDAO::getHistory();
-            return compact("histories");
+            return compact("histories", "title");
         }
     }
