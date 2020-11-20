@@ -44,7 +44,7 @@
 	<div class="board">
 
 		<div class="chatBox">
-			<iframe class="gameChat" onload="applyStyles(this)" src=<?="https://magix.apps-de-cours.com/server/#/chat/".$data["key"]."/large" ?>></iframe>
+			<iframe class="gameChat" onload="applyStyles(this)" src=<?="https://magix.apps-de-cours.com/server/#/chat/".$data["key"]."/large"?>></iframe>
 		</div>
 
 		<div class="battlefield">

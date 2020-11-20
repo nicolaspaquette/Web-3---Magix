@@ -114,7 +114,7 @@ html, body{
     margin-top: 2em;
     margin-bottom: 1em;
     height: 562px;
-    width: 610px;
+    width: 630px;
 }
 
 .buttonLobby{
@@ -709,16 +709,70 @@ html, body{
     background-attachment:fixed;
     background-size: cover;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.historyPage h1{
+    font-size: 3em;
+    padding-bottom: 0.5em;
 }
 
 .historyBox{
+    width: 75%;
+    height: 75%;
+    background-color: rgba(58, 58, 58, 0.7);
+    border:3px solid black;
+    box-shadow: 10px 10px 15px black;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
 
+@media screen and (max-width: 1000px){
+    .entry{
+        font-size: 0.8em;
+    }
+
+    .historyName{
+        font-size: 0.8em;
+    }   	
+
+    .historyPage h1{
+        font-size: 2em;
+        padding-bottom: 0.5em;
+    }
 }
 
 .history{
-
+    height: 9.5%;
+    display: flex;
+    border-bottom:3px solid black;
+    justify-content: space-around;
 }
 
 .entry{
-    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.historyNames{
+    height: 5%;
+    display: flex;
+    border-bottom:3px solid black;
+    justify-content: space-around;
+    background-color: rgba(7, 7, 7, 0.7);
+}
+
+.historyName{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

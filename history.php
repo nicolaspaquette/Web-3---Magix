@@ -9,8 +9,15 @@
 
 <div class="historyPage">
 
-	<div class="historyBox">
+	<h1>Historique des dix dernières parties</h1>
 
+	<div class="historyBox">
+		<div class="historyNames">
+			<div class="historyName">Nom du joueur</div>
+			<div class="historyName">Nom de l'adversaire</div>
+			<div class="historyName">Date</div>
+			<div class="historyName">Nom du gagnant</div>
+		</div>
 	<?php
 		foreach ($data["histories"] as $history){ ?>
 
