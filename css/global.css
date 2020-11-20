@@ -702,3 +702,23 @@ html, body{
     width: 100%;
 }
 
+.historyPage{
+    height: 100%;
+    background-image: url("../images/historyBG.jpg");
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    display: flex;
+}
+
+.historyBox{
+
+}
+
+.history{
+
+}
+
+.entry{
+    
+}

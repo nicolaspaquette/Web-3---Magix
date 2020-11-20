@@ -7,21 +7,25 @@
 	require_once("partial/header.php");
 ?>
 
-<div class="HistoryPage">
+<div class="historyPage">
 
-<?php
-	foreach ($data["histories"] as $history){ ?>
+	<div class="historyBox">
 
-	<div>
-		<div><?= $history["nomjoueur"] ?></div>
-		<div><?= $history["nomadversaire"] ?></div>
-        <div><?= $history["datepartie"] ?></div>
-		<div><?= $history["nomgagnant"] ?></div>
-	</div>
-	
 	<?php
-	}
-?>
+		foreach ($data["histories"] as $history){ ?>
+
+		<div class="history">
+			<div class="entry"><?= $history["nomjoueur"] ?></div>
+			<div class="entry"><?= $history["nomadversaire"] ?></div>
+			<div class="entry"><?= $history["datepartie"] ?></div>
+			<div class="entry"><?= $history["nomgagnant"] ?></div>
+		</div>
+		
+		<?php
+		}
+	?>
+
+	</div>
 
 </div>
 
