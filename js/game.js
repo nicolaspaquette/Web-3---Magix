@@ -14,6 +14,10 @@ let datePartie = null;
 let nomGagnant = null;
 let counter = 0;
 
+window.addEventListener("load", () => {
+    setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
+    });
+
 const state = () => {
 
     let formData = new FormData();
@@ -295,10 +299,6 @@ const state = () => {
     setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
     })
 }
-
-window.addEventListener("load", () => {
-setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
-});
 
 const showHideChat = () =>{
     if (document.querySelector(".gameChat").style.display != "none"){
