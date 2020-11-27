@@ -55,7 +55,7 @@
                 }
         ?>
 
-        <iframe onload="applyStyles(this)"
+        <iframe class="lobbyChat" onload="applyStyles(this)"
                 src=<?="https://magix.apps-de-cours.com/server/#/chat/".$data["key"]."/large"?>>
         </iframe>
 
