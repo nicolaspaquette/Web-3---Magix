@@ -19,6 +19,7 @@
 			$gameError = false;
 			$observeError = false;
 			$key = $_SESSION["key"];
+			$username = $_SESSION["username"];
 
 			if (isset($_POST["Pratiquer"]) || isset($_POST["Jouer"]) || isset($_POST["Pratiquer2v1"]) || isset($_POST["Jouer2v1"])){
 				$data = [];
@@ -95,6 +96,6 @@
 				exit;
 			}
 			
-			return compact("logoutError", "title", "key", "gameError", "observeError");
+			return compact("logoutError", "title", "key", "gameError", "observeError", "username");
         }
 	}

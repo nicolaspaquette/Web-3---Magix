@@ -8,6 +8,13 @@
 ?>
 
 <div class="lobbyPage">
+    <?php
+        if (!empty($data["username"]) && $data["username"] != "Invité"){
+            ?>
+                <h1>Bonjour, combattant <?=$data["username"]?></h1>
+            <?php
+        }
+    ?>
 
     <div class="lobby">
         
